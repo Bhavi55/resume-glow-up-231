@@ -1,7 +1,5 @@
 // Client-side resume text extraction for PDF and DOCX files.
 import * as pdfjsLib from "pdfjs-dist";
-// Use the bundled worker via Vite ?url so pdfjs works in the browser.
-// @ts-expect-error - vite worker url import
 import pdfWorker from "pdfjs-dist/build/pdf.worker.min.mjs?url";
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorker;
