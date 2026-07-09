@@ -1,41 +1,25 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Navbar } from "@/components/Navbar";
-import { Hero } from "@/components/Hero";
-import { HowItWorks } from "@/components/HowItWorks";
-import { AnalyzerSection } from "@/components/AnalyzerSection";
-import { Footer } from "@/components/Footer";
-import { Toaster } from "@/components/ui/sonner";
+import { JobsApp } from "@/components/jobs/JobsApp";
 
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "ResumeIQ — AI Resume Analyzer & ATS Score" },
+      { title: "TrackWise — Job Application Tracker" },
       {
         name: "description",
         content:
-          "Upload your resume for an instant ATS compatibility score, detected skills, missing keywords, and personalized improvement suggestions.",
+          "Track your job applications with a beautiful dashboard: stats, filters, search, sort, and a calendar view. Data stays in your browser.",
       },
-      { property: "og:title", content: "ResumeIQ — AI Resume Analyzer" },
+      { property: "og:title", content: "TrackWise — Job Application Tracker" },
       {
         property: "og:description",
-        content: "Instant ATS score, skills, keywords and improvements for your resume.",
+        content: "Beautiful job application tracker with dashboard, calendar view, filters, and dark mode.",
       },
     ],
   }),
 });
 
 function Index() {
-  return (
-    <div className="min-h-screen pb-10">
-      <Navbar />
-      <main>
-        <Hero />
-        <AnalyzerSection />
-        <HowItWorks />
-      </main>
-      <Footer />
-      <Toaster position="top-center" />
-    </div>
-  );
+  return <JobsApp />;
 }
